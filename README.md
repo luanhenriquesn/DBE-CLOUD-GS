@@ -16,7 +16,7 @@ Agora que ideias para melhorar o mundo não nos faltam e estão disponíveis par
 
 
 ## Instrução para execução e testes
-Para rodar o projeto Spare com SpringBoot em seu computador, você deve:
+**Para rodar o projeto Spare com SpringBoot em seu computador, você deve:**
   1 - Baixar a Pasta Spare deste repositório
   2 - Importar a pasta na sua IDE como "Maven Project"
   3 - Rodar a classe "SpareApplication" como "java application" em sua IDE.
