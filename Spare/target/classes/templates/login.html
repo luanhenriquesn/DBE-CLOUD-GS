@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<h1><a href="/" th:text="#{name}"></a></h1>
+	
+	 
+	<section class="card form">
+	
+		<h2 th:text="#{login}"></h2>
+		
+		<!-- A rota POST /login j� � criada por padr�o pelo spring security, ent�o, para usufruir dela corremente, basta deixar os NAME dos campos como USERNAME e PASSWORD. No caso, o nosso USERNAME seria o EMAIL, pois � ele que � utilizado no login. -->
+		<form th:action="@{/login}" method="post" >
+			
+			<!-- Mensagem que será exibida caso o login sejá inválido - Se o login for invalido, o PARAMETRO ERROR será retornado na requisição, então basta verificar se ele foi retornado, se sim, exibe a mensagem de erro -->
+			<div th:if="${param.error}" class="alert error" th:text="#{login.invalid}"></div>
+			<div class="alert" th:if="${message != null}" th:text="${message}"></div>
+			
+			<label for="email" th:text="#{login.email}"></label>
+			<input type="text" name="username" id="email">
+			
+			<label for="pass" th:text="#{login.password}"></label>
+			<input type="password" name="password" id="pass">
+			 
+			<div class="buttons">
+				<a href="/" class="button" th:text="#{login.back}"></a>
+				<button class="button primary" th:text="#{login.login}"></button>
+			</div>
+			
+		</form>
+	
+	</section>
+	
+	
+	
+</body>
+</html>

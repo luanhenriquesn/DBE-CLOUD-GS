@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:sec="http://thymeleaf.org/thymeleaf-extras-springsecurity5" >
+	  
+<head th:include="_template :: head"></head>
+
+<body>
+	
+	
+	<header th:include="_template :: header"></header>	
+	
+	
+	<div class="alert" th:if="${message != null}" th:text="${message}"></div>
+	
+	<div class="card">
+		<nav th:include="_template :: menu('tips')"></nav>
+		<a href="/tip/new" class="button primary action">
+			<span class="material-icons">
+				add_circle_outline
+			</span>
+			<span th:text="#{tip.newtip}"></span>
+		</a>
+		
+		<div class="tips">
+		
+			<div class="card tip" th:each="tip : ${tips}">
+			
+				<div>
+					<h3 th:text="${tip.title}"></h3>
+				</div>
+				
+				<p th:text="${tip.description}"></p>
+				
+				<div class="tip-actions">
+					
+					<a th:href="${'/tip/delete/' + tip.id}" sec:authorize="hasRole('ROLE_ADMIN')"
+						class="button icon primary" th:title="#{tip.remove}">
+						<span class="material-icons red">delete</span>
+					</a>
+					
+				</div>
+				
+			</div>
+		
+		</div>
+
+	</div>
+	
+</body>
+</html>

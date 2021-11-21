@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+
+	<h1><a href="/"  th:text="#{name}"></a></h1>
+	
+	
+	<section class="card form">
+		<h2  th:text="#{user.subtitle}"></h2>
+		
+		<form th:action="@{/user/new}" method="post" th:object="${user}">
+		
+			<label for="name"  th:text="#{user.name}"></label>
+			<input type="text" name="name" id="name" 
+				th:field="*{name}" th:classappend="${#fields.hasErrors('name')}?invalid" />
+			<span class="error" th:errors="*{name}"></span>
+			
+			<label for="email"  th:text="#{user.email}"></label>
+			<input type="email" name="email" id="email" 
+				th:field="*{email}" th:classappend="${#fields.hasErrors('email')}?invalid" />
+			<span class="error"  th:errors="*{email}"></span>
+
+			<label for="password"  th:text="#{user.password}"></label>
+			<input type="password" name="password" id="password" 
+				th:field="*{password}" th:classappend="${#fields.hasErrors('password')}?invalid" />
+			<span class="error"  th:errors="*{password}"></span>
+			
+			<!-- Recebendo o objeto  roles, e exibindo as roles cadastradas no banco. -->
+			<label for="roleId"  th:text="#{user.role}"></label>
+			<select name="roleId" id="roleId">
+				<option th:each="role : ${roles}" th:value="${role.id}"><p th:text="${role.roleName}"></p></option>
+			</select>
+			
+			<div class="buttons">
+				<a href="/" class="button"  th:text="#{button.cancel}"></a>
+				<button class="button primary"  th:text="#{button.save}"></button>
+			</div>
+			
+		</form>
+	</section>
+
+</body>
+</html>

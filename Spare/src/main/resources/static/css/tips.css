@@ -1,0 +1,74 @@
+.card .tips{
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	flex-wrap: wrap;
+}
+
+.card .tip{
+	display:flex;
+	justify-content: space-between;
+	margin: 1rem;
+	padding: 1rem;
+	max-width: 250px;
+	background: #FFF;
+	color: #000;
+	border-radius: 7px;
+
+}
+
+.card .tip h3{
+	margin: 0;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.card .tip .tip-actions {
+	display: flex;
+	justify-content: space-between;
+}
+
+
+
+
+
+
+
+.content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+	padding-bottom: 3rem;
+	
+}
+
+.mytips{
+	width: 80%;
+	max-width: 900px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: solid 1px rgba(255,255,255,0.3);
+	margin: 0 1rem;
+}
+
+.mytips-info{
+	flex-grow:1;
+	padding: 1rem 0;
+	margin-left: 1rem;
+}
+
+.mytips-info h4,
+.mytips-info h5{
+	margin: 0;
+}
+
+.mytips-info p{
+	font-weight: 100;
+	margin: 0;
+}

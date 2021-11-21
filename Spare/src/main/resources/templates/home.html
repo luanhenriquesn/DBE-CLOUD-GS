@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:include="_template :: head"></head>
+
+<body>
+
+	<h1><a href="/"  th:text="#{name}"></a></h1>
+	
+	<main class="home">
+        <div class="left">
+            <h2 th:text="#{home.subtitle}"></h2>
+            <p th:text="#{home.p1}"></p>
+			<p th:text="#{home.p2}"></p>
+			<p th:text="#{home.p3}"></p>
+			
+            <div class="buttons">
+
+                <a href="/login" class="button primary">
+                    <span class="material-icons"> login </span>
+                    <span th:text="#{home.login}"></span>
+                </a>
+
+                <a href="/user/new" class="button">
+                    <span class="material-icons"> person </span>
+                    <span th:text="#{home.register}"></span>
+                </a>
+            </div>
+        </div>
+
+        <aside class="right">
+            <img alt="I Love Food" th:src="@{~/images/food.svg}">
+        </aside>
+
+
+
+    </main>
+
+
+
+</body>
+</html>
